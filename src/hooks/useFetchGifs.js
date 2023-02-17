@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import { getGifByCategory } from "../helpers/getGifByCategory";
+import { useState, useEffect } from 'react';
+import { getGifByCategory } from '../helpers/getGifByCategory';
 
-export const useFetchGifs = (category) => {
+export const useFetchGifs = ( category ) => {
 
-  const [images, setImages] = useState( [] );
-  const [isLoading, setIsLoading] = useState( true );
+  const [ images, setImages ] = useState( [] );
+  const [ isLoading, setIsLoading ] = useState( true );
 
   const getImages = async () => {
-    const imagesList = await getGifByCategory(category);
+    const imagesList = await getGifByCategory( category );
     setImages( imagesList );
     setIsLoading( false );
   }

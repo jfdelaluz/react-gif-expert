@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 
 export const AddCategory = ({ onNewCategory }) => {
 
-  const [inputValue, setInputValue] = useState('');
+  const [ inputValue, setInputValue ] = useState( '' );
 
-  const onInputChange = ( event ) => {
-    setInputValue( event.target.value );
+  const onInputChange = ({ target }) => {
+    setInputValue( target.value );
   };
 
   const onSubmit = ( event ) => {
     event.preventDefault();
     const newCategory = inputValue.trim();
-    if (newCategory.length <= 1) return;
-    onNewCategory(newCategory);
+
+    if ( newCategory.length <= 1 ) return;
+    onNewCategory( newCategory );
+
     setInputValue( '' );
   }
 

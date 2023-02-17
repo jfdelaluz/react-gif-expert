@@ -3,7 +3,7 @@ const apiUrl = 'https://api.giphy.com/v1/gifs/search',
       gifQuantity = 10;
 
 export const getGifByCategory = async ( category ) => {
-  const response = await fetch(`${apiUrl}?api_key=${apiKey}&q=${category}&limit=${gifQuantity}`);
+  const response = await fetch( `${ apiUrl }?api_key=${ apiKey }&q=${ category }&limit=${ gifQuantity }` );
   const { data } = await response.json();
 
   const gifList = data.map( img => {

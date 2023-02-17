@@ -5,13 +5,13 @@ export const GifExpertApp = () => {
 
   const [ categories, setCategories ] = useState([ 'One Punch', 'Dragon Ball' ]);
 
-  const onAddCategory = (newCategory) => {
-    if ( categories.includes(newCategory) ) return;
+  const onAddCategory = ( newCategory ) => {
+    if ( categories.includes( newCategory ) ) return;
     setCategories([ newCategory, ...categories ]);
   }
 
   const onClearCategories = () => {
-    setCategories([]);
+    setCategories( [] );
   }
 
   return (
@@ -21,7 +21,7 @@ export const GifExpertApp = () => {
       <AddCategory onNewCategory={ onAddCategory } />
       <button onClick={ onClearCategories }>Clear Categories</button>
 
-      { categories.map((category) => {
+      { categories.map( ( category ) => {
         return <GifGrid key={ category } category={ category } />;
       }) }
     </>
